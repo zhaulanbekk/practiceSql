@@ -1,0 +1,40 @@
+--1--
+SELECT first_name, country FROM employees;
+--2--
+SELECT COUNT(*) FROM employees;
+--3--
+SELECT * FROM employees ORDER BY country DESC ;
+--4--
+SELECT  DISTINCT country FROM employees;
+--5--
+SELECT * FROM employees where gender='Female';
+--6--
+SELECT * FROM employees WHERE gender IN('Male','Female');
+--7--
+SELECT * FROM employees WHERE gender='Male' AND  country IN ('China','Indonesia');
+--8--
+SELECT * FROM employees OFFSET '50';
+--9--
+SELECT * FROM employees WHERE id BETWEEN 20 AND 80;
+--10--
+SELECT * FROM employees WHERE country NOT LIKE 'Russia' AND country NOT LIKE 'Indonesia' AND  country NOT LIKE 'Poland';
+--11--
+SELECT first_name,last_name,age FROM employees WHERE age BETWEEN 30 AND 50;
+--12--
+SELECT * FROM employees WHERE email NOT LIKE '%.com';
+--13--
+SELECT * FROM employees WHERE first_name LIKE '%e';
+--14--
+SELECT COUNT(DISTINCT country) FROM employees;
+--15--
+SELECT country,COUNT(*) FROM employees GROUP BY country ORDER BY COUNT(*);
+--16--
+SELECT MAX(age) FROM employees;
+--17--
+SELECT AVG(age) FROM employees;
+--18--
+SELECT country,COUNT(*) FROM employees GROUP BY country HAVING COUNT(*)>5 ORDER BY COUNT(*);
+--19--
+SELECT * FROM employees WHERE age != 50;
+--20--
+SELECT last_name FROM employees WHERE LENGTH(last_name)=6;
